@@ -1,0 +1,56 @@
+{
+    "name": "clustermap",
+    "widgetName": "ClusterMap",
+    "version": "1.0.0",
+    "description": "My widget description",
+    "copyright": "© Mendix Technology BV 2022. All rights reserved.",
+    "author": "Hélène",
+    "engines": {
+        "node": ">=16"
+    },
+    "license": "Apache-2.0",
+    "config": {
+        "projectPath": "../../../Appart",
+        "mendixHost": "http://localhost:8080",
+        "developmentPort": 3000
+    },
+    "packagePath": "mendix",
+    "scripts": {
+        "start": "pluggable-widgets-tools start:server",
+        "dev": "pluggable-widgets-tools start:web",
+        "build": "pluggable-widgets-tools build:web",
+        "lint": "pluggable-widgets-tools lint",
+        "lint:fix": "pluggable-widgets-tools lint:fix",
+        "test": "pluggable-widgets-tools test:unit:web --no-cache --ci",
+        "test:unit": "pluggable-widgets-tools test:unit:web --coverage",
+        "prerelease": "npm run lint",
+        "release": "pluggable-widgets-tools release:web"
+    },
+    "devDependencies": {
+        "@mendix/pluggable-widgets-tools": "^9.24.0",
+        "@types/big.js": "^6.0.2",
+        "@types/enzyme": "^3.10.8",
+        "@types/jest": "^29.0.0",
+        "@types/react-test-renderer": "~18.0.0"
+    },
+    "dependencies": {
+        "@react-google-maps/api": "^2.18.1",
+        "classnames": "^2.2.6"
+    },
+    "resolutions": {
+        "react": "18.2.0",
+        "react-native": "0.70.7",
+        "@types/react": "18.0.2",
+        "@types/react-dom": "18.0.2",
+        "react-dom": "18.2.0",
+        "@types/react-native": "0.70.0"
+    },
+    "overrides": {
+        "react": "18.2.0",
+        "react-native": "0.70.7",
+        "react-dom": "18.2.0",
+        "@types/react": "18.0.0",
+        "@types/react-dom": "18.0.0",
+        "@types/react-native": "0.70.0"
+    }
+}

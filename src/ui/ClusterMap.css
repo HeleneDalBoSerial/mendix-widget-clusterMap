@@ -1,0 +1,24 @@
+.widget-clustermap-clickable {
+    cursor: pointer;
+}
+
+.widget-clustermap {
+    display: inline-block;
+}
+
+.widget-clustermap.badge:empty {
+    display: initial;
+    /* Fix padding to stay round */
+    padding: 3px 10px;
+}
+
+.widget-clustermap.label:empty {
+    display: initial;
+    /* Fix padding to stay square */
+    padding: .2em .8em .3em;
+}
+
+.widget-clustermap.badge {
+    min-width: 18px;
+    min-height: 18px;
+}
