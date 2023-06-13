@@ -95,20 +95,22 @@ export function ClusterMap(props: ClusterMapContainerProps): ReactElement {
         <LoadScript googleMapsApiKey={apiKey}>
             {clusters && clusters.length > 0 ? (
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={zoom}>
-                    <MarkerClusterer styles={clusterStyle}>
-                        {clusterer =>
-                            clusters[0].appartments.map(appart => (
-                                <Marker
-                                    onClick={() => setCenter(getPosition(appart))}
-                                    key={createKey(appart)}
-                                    position={getPosition(appart)}
-                                    label={{ text: appart.id.toString(), color: "white" }}
-                                    clusterer={clusterer}
-                                    icon={svgMarker as any}
-                                />
-                            ))
-                        }
-                    </MarkerClusterer>
+                    {clusters.map(cluster => (
+                        <MarkerClusterer styles={clusterStyle}>
+                            {clusterer =>
+                                cluster.appartments.map(appart => (
+                                    <Marker
+                                        onClick={() => setCenter(getPosition(appart))}
+                                        key={createKey(appart)}
+                                        position={getPosition(appart)}
+                                        label={{ text: appart.id.toString(), color: "white" }}
+                                        clusterer={clusterer}
+                                        icon={svgMarker as any}
+                                    />
+                                ))
+                            }
+                        </MarkerClusterer>
+                    ))}
                 </GoogleMap>
             ) : (
                 <div></div>
