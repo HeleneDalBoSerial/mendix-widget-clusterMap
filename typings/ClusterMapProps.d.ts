@@ -7,10 +7,6 @@ import { CSSProperties } from "react";
 import { ActionValue, ListValue, ListAttributeValue } from "mendix";
 import { Big } from "big.js";
 
-export type BootstrapStyleEnum = "default" | "primary" | "success" | "info" | "inverse" | "warning" | "danger";
-
-export type ClustermapTypeEnum = "badge" | "label";
-
 export interface ClusterMapContainerProps {
     name: string;
     class: string;
@@ -21,8 +17,6 @@ export interface ClusterMapContainerProps {
     city?: ListAttributeValue<string>;
     coordinateX?: ListAttributeValue<Big>;
     coordinateY?: ListAttributeValue<Big>;
-    bootstrapStyle: BootstrapStyleEnum;
-    clustermapType: ClustermapTypeEnum;
     onClickAction?: ActionValue;
 }
 
@@ -40,7 +34,5 @@ export interface ClusterMapPreviewProps {
     city: string;
     coordinateX: string;
     coordinateY: string;
-    bootstrapStyle: BootstrapStyleEnum;
-    clustermapType: ClustermapTypeEnum;
     onClickAction: {} | null;
 }

@@ -43,29 +43,6 @@
                 </attributeTypes>
             </property>
         </propertyGroup>
-        <propertyGroup caption="Display">
-            <property key="bootstrapStyle" type="enumeration" defaultValue="default">
-                <caption>ClusterMap style</caption>
-                <description>The appearance of the clustermap</description>
-                <enumerationValues>
-                    <enumerationValue key="default">Default</enumerationValue>
-                    <enumerationValue key="primary">Primary</enumerationValue>
-                    <enumerationValue key="success">Success</enumerationValue>
-                    <enumerationValue key="info">Info</enumerationValue>
-                    <enumerationValue key="inverse">Inverse</enumerationValue>
-                    <enumerationValue key="warning">Warning</enumerationValue>
-                    <enumerationValue key="danger">Danger</enumerationValue>
-                </enumerationValues>
-            </property>
-            <property key="clustermapType" type="enumeration" required="true" defaultValue="badge">
-                <caption>Type</caption>
-                <description>Render it as either a badge or a color label</description>
-                <enumerationValues>
-                    <enumerationValue key="badge">Badge</enumerationValue>
-                    <enumerationValue key="label">Label</enumerationValue>
-                </enumerationValues>
-            </property>
-        </propertyGroup>
         <propertyGroup caption="Events">
             <property key="onClickAction" type="action" required="false">
                 <caption>On click action</caption>

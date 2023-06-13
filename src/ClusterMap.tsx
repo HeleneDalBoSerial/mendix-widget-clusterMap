@@ -24,11 +24,11 @@ export function ClusterMap(props: ClusterMapContainerProps): ReactElement {
         height: "calc(100vh - 120px)"
     };
 
-    const svgMarker = svgImage;
-
     const [clusters, setClusters] = useState([]);
     const [zoom, setZoom] = useState(0);
     const [center, setCenter] = useState(null);
+    const [apiKey] = useState(AppConfig.googleMaps.apiKey);
+    const [svgMarker] = useState(svgImage);
 
     const appartmentsToCityClusters = (listValue: ListValue) => {
         const result = [] as AppartmentsCluster[];
@@ -91,7 +91,7 @@ export function ClusterMap(props: ClusterMapContainerProps): ReactElement {
     }
 
     return (
-        <LoadScript googleMapsApiKey="AIzaSyDMj6JTkjO-ujVlpGacRzkYsooSE-_WhUg">
+        <LoadScript googleMapsApiKey={apiKey}>
             {clusters && clusters.length > 0 ? (
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={zoom}>
                     <MarkerClusterer>
@@ -101,8 +101,9 @@ export function ClusterMap(props: ClusterMapContainerProps): ReactElement {
                                     onClick={() => setCenter(getPosition(appart))}
                                     key={createKey(appart)}
                                     position={getPosition(appart)}
-                                    label={{ text: appart.code, color: "white" }}
+                                    label={{ text: appart.id.toString(), color: "white" }}
                                     clusterer={clusterer}
+                                    icon={svgMarker as any}
                                 />
                             ))
                         }

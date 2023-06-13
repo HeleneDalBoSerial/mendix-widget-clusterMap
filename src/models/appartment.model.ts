@@ -1,7 +1,7 @@
 export interface Appartment {
     id: string | number;
     order?: number;
-    code?: string;
+    name?: string;
     address?: string;
     city: string;
     coordinateX: number;
