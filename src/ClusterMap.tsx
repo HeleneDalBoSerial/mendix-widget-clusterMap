@@ -9,7 +9,7 @@ import { ListValue } from "mendix";
 import { Appartment } from "./models/appartment.model";
 import { AppConfig } from "./config/app.config";
 import { GmapPosition } from "./models/gmap-position.model";
-import { svgMarker as svgImage } from "./config/maps.param";
+import { svgMarker as svgImage, clusterStyles } from "./config/maps.param";
 
 export function ClusterMap(props: ClusterMapContainerProps): ReactElement {
     const { appartments, onClickAction, city, ident, coordinateX, coordinateY } = props;
@@ -29,6 +29,7 @@ export function ClusterMap(props: ClusterMapContainerProps): ReactElement {
     const [center, setCenter] = useState(null);
     const [apiKey] = useState(AppConfig.googleMaps.apiKey);
     const [svgMarker] = useState(svgImage);
+    const [clusterStyle] = useState(clusterStyles);
 
     const appartmentsToCityClusters = (listValue: ListValue) => {
         const result = [] as AppartmentsCluster[];
@@ -94,7 +95,7 @@ export function ClusterMap(props: ClusterMapContainerProps): ReactElement {
         <LoadScript googleMapsApiKey={apiKey}>
             {clusters && clusters.length > 0 ? (
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={zoom}>
-                    <MarkerClusterer>
+                    <MarkerClusterer styles={clusterStyle}>
                         {clusterer =>
                             clusters[0].appartments.map(appart => (
                                 <Marker

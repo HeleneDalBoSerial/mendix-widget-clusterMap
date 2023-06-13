@@ -9,13 +9,13 @@ export const svgMarker = {
     labelOrigin: { x: 12, y: 10 }
 };
 
-/*export const clusterStyles = [
+export const clusterStyles = [
     {
         textColor: "white",
-        url: require("@/assets/images/map-marker.svg"),
+        url: "https://svgshare.com/i/uBL.svg",
         height: 40,
         width: 35,
         textSize: 14,
-        anchorText: [6, 0]
+        anchorText: [0, 0]
     }
-];*/
+];
